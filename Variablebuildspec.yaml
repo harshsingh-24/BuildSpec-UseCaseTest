@@ -27,6 +27,9 @@ steps:
       echo "hello world"
       echo $minor_version
 outputArtifacts:
-  - name: bugbashArtifact
+  - name: bugbashUIM
     type: BINARY
+    location: abc.txt
+  - name: bugbashArtifact
+    type: DOCKER_IMAGE
     location: abc.txt
