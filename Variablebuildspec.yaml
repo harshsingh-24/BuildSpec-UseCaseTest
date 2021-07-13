@@ -10,11 +10,6 @@ env:
   exportedVariables:
     - testEnv
     - minor_version
-#  vaultVariables:
-#    "bankPassword": "ocid1.vaultsecret.oc1.iad.amaaaaaa34lgq7aa325l6x7exbl5y7c4pk75aodriekuttjkuqatetll35aq"       # secret-id (in OCI ID format) STORED IN OCI Vault Service
-# inputArtifacts:
-#   - name: hello-dev-jar
-#     location: hello123.class
 
 steps:
   - type: Command
@@ -24,9 +19,14 @@ steps:
       echo "hello world"
       echo $minor_version
       minor_version=22
+      echo “test”> abc.txt
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
     command: |
       echo "hello world"
       echo $minor_version
+outputArtifacts:
+  - name: bugbashArtifact
+    type: BINARY
+    location: abc.txt
