@@ -20,10 +20,13 @@ steps:
       echo $minor_version
       minor_version=22
       echo “test”> abc.txt
+      cd src/main/java/org/example/
+      javac HelloWorld.java
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
     command: |
+      docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
       echo $minor_version
 outputArtifacts:
@@ -32,4 +35,4 @@ outputArtifacts:
     location: abc.txt
   - name: bugbashArtifact
     type: DOCKER_IMAGE
-    location: abc.txt
+    location: iad.ocir.io/id204we8d65n/bugbashcontainer
