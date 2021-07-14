@@ -19,7 +19,3 @@ steps:
     command: |
       echo "hello world"
       minor_version=22
-outputArtifacts:
-  - name: ABC
-    type: BINARY
-    location: abc.txt
