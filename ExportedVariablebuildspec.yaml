@@ -18,7 +18,7 @@ steps:
     timeoutInSeconds: 400
     command: |
       echo "hello world"
-      minor_version = 22
+      minor_version=22
 outputArtifacts:
   - name: ABC
     type: BINARY
