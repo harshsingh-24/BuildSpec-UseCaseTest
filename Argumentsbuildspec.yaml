@@ -21,14 +21,14 @@ steps:
     timeoutInSeconds: 400
     command: |
       echo "hello world"
-      minor_version = 20
+      minor_version=20
       echo $minor_version
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
     command: |
       echo "hello world"
-      minor_version = 22
+      minor_version=22
       echo $minor_version
 outputArtifacts:
   - name: ABC
