@@ -30,7 +30,3 @@ steps:
       echo "hello world"
       minor_version=22
       echo $minor_version
-outputArtifacts:
-  - name: ABC
-    type: BINARY
-    location: abc.txt
