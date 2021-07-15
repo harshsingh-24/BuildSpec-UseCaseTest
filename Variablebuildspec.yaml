@@ -32,7 +32,7 @@ steps:
 outputArtifacts:
   - name: bugbashUIM
     type: BINARY
-    location: abc.txt
+    location: HelloWorld.yaml
   - name: bugbashArtifact
     type: DOCKER_IMAGE
     location: iad.ocir.io/id204we8d65n/bugbashcontainer
