@@ -39,4 +39,7 @@ outputArtifacts:
   - name: deploymentSpec
     type: BINARY
     location: deployment-spec.yaml
-    
+  - name: testArtifact
+    type: BINARY
+    location: testArtifacts.tar.gz
+  
