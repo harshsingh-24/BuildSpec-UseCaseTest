@@ -32,7 +32,7 @@ steps:
 outputArtifacts:
   - name: bugbashKubeManifest
     type: BINARY
-    location: HelloWorld.yaml
+    location: helloWorld-oke.yaml
   - name: bugbashArtifact
     type: DOCKER_IMAGE
     location: iad.ocir.io/id204we8d65n/bugbashcontainer
