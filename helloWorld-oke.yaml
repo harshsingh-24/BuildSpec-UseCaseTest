@@ -1,44 +1,45 @@
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: helloworld-demo
----
+--- 
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: helloworld-deployment
-  namespace: helloworld-demo
-spec:
-  progressDeadlineSeconds: 180
-  selector:
-    matchLabels:
-      app: helloworld
-  replicas: 3
-  template:
-    metadata:
-      labels:
-        app: helloworld
-    spec:
-      containers:
-        - name: helloworld
-          # enter the path to your image, be sure to include the correct region prefix
-          image: iad.ocir.io/id204we8d65n/bugbashcontainer:22
-          ports:
-            - containerPort: 8888
+metadata: 
+  labels: 
+    app.kubernetes.io/name: devops-nginx
+  name: nginx-deployment
+spec: 
+  replicas: 5
+  selector: 
+    matchLabels: 
+      app.kubernetes.io/name: devops-nginx
+  template: 
+    metadata: 
+      labels: 
+        app.kubernetes.io/name: devops-nginx
+    spec: 
+      containers: 
+        - name: nginx
+          image: nginx:1.20.0
+          ports: 
+            - containerPort: 80
               protocol: TCP
+              name: http
 ---
 apiVersion: v1
 kind: Service
-metadata:
-  name: helloworld-service
-  namespace: helloworld-demo
-  annotations: 
-    service.beta.kubernetes.io/oci-load-balancer-shape: "10Mbps"
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 8080
+metadata: 
+  labels: 
+    app.kubernetes.io/name: devops-nginx
+  name: nginx-service
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: 10
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: 10
+spec: 
+  ports: 
+    - name: http
+      port: 80
       protocol: TCP
-      targetPort: 8888
-  selector:
-    app: helloworld
+      targetPort: 80
+  selector: 
+    app.kubernetes.io/name: devops-nginx
+  type: LoadBalancer
+  
