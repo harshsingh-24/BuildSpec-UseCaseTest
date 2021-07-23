@@ -22,7 +22,7 @@ spec:
       containers:
         - name: helloworld
           # enter the path to your image, be sure to include the correct region prefix
-          image: iad.ocir.io/ax022wvgmjpq/helloworld:v1
+          image: iad.ocir.io/id204we8d65n/bugbashcontainer:22
           ports:
             - containerPort: 8888
               protocol: TCP
