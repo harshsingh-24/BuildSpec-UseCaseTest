@@ -30,7 +30,7 @@ steps:
       echo "hello world"
       echo $minor_version
 outputArtifacts:
-  - name: bugbashUIM
+  - name: bugbashKubeManifest
     type: BINARY
     location: HelloWorld.yaml
   - name: bugbashArtifact
