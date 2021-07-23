@@ -36,3 +36,7 @@ outputArtifacts:
   - name: bugbashArtifact
     type: DOCKER_IMAGE
     location: iad.ocir.io/id204we8d65n/bugbashcontainer
+  - name: deploymentSpec
+    type: BINARY
+    location: deployment-spec.yaml
+    
