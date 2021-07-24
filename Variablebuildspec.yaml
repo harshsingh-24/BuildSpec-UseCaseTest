@@ -18,7 +18,7 @@ steps:
     command: |
       echo "hello world"
       echo $minor_version
-      minor_version=27
+      minor_version=28
       echo “test”> abc.txt
       cd src/main/java/org/example/
       javac HelloWorld.java
