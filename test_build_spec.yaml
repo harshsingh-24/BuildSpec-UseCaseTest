@@ -17,7 +17,8 @@ steps:
     command: |
       su - root -c "rm -r /var/log/tallylog"
       su - root -c "useradd userA"
-      su - userA -c whoami
+      su - userA
+      echo "$USER"
       echo "hello world"
       echo $minor_version
       minor_version=1
