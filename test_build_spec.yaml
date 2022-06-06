@@ -16,7 +16,8 @@ steps:
     name: "Build Source 1"
     timeoutInSeconds: 400
     command: |
-      useradd -c "Test user account" userA
+      su - root -c "useradd userA"
+      su - someuser -c whoami
       echo $USER
       echo $USERNAME
       echo "hello world"
@@ -30,6 +31,7 @@ steps:
     timeoutInSeconds: 400
     runAs: userA
     command: |
+      su - someuser -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
       echo $minor_version
