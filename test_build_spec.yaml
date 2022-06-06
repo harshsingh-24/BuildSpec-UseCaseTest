@@ -33,6 +33,7 @@ steps:
     timeoutInSeconds: 400
     runAs: userA
     command: |
+      su -c whoami
       echo "printing usename:"
       su - userA -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
