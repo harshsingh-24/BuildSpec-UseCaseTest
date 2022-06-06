@@ -16,7 +16,7 @@ steps:
     name: "Build Source 1"
     timeoutInSeconds: 400
     command: |
-      sudo useradd -c "Test user account" userA
+      useradd -c "Test user account" userA
       echo $USER
       echo $USERNAME
       echo "hello world"
