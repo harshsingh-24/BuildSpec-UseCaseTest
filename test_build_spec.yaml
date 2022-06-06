@@ -27,6 +27,7 @@ steps:
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
+    runAs: userA
     command: |
       su - userA -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
