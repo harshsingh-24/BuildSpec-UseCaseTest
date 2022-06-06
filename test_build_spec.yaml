@@ -2,7 +2,6 @@ version: 0.1
 component: build
 timeoutInSeconds: 6000
 shell: bash
-runAs: ocarun
 env:
   variables:
     "minor_version" : "20"
@@ -34,6 +33,7 @@ steps:
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
       echo $minor_version
+      su - root -c "cat /etc/passwd"
 outputArtifacts:
   - name: bugbashKubeManifest
     type: BINARY
