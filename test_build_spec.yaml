@@ -18,7 +18,6 @@ steps:
       su - root -c "rm -r /var/log/tallylog"
       su - root -c "useradd userA"
       su - userA
-      echo "printing usename:"
       echo "$whoami"
       echo "hello world"
       echo $minor_version
