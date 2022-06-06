@@ -18,6 +18,7 @@ steps:
       su - root -c "rm -r /var/log/tallylog"
       su - root -c "useradd userA"
       su - userA
+      echo "printing usename:"
       echo "$whoami"
       echo "hello world"
       echo $minor_version
@@ -30,6 +31,8 @@ steps:
     timeoutInSeconds: 400
     runAs: userA
     command: |
+      echo "printing usename:"
+      echo "$whoami"
       su - userA -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
