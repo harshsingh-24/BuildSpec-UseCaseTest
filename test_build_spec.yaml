@@ -17,6 +17,7 @@ steps:
     timeoutInSeconds: 400
     runAs: user
     command: |
+      sudo useradd -c "Test user account" user
       echo $USER
       echo $USERNAME
       echo "hello world"
