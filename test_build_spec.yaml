@@ -1,7 +1,6 @@
 version: 0.1
 component: build
 timeoutInSeconds: 6000
-runAs: root
 shell: bash
 env:
   variables:
@@ -17,9 +16,7 @@ steps:
     timeoutInSeconds: 400
     command: |
       su - root -c "useradd userA"
-      su - userA -c whoami
-      echo $USER
-      echo $USERNAME
+      su -c whoami
       echo "hello world"
       echo $minor_version
       minor_version=1
@@ -29,7 +26,6 @@ steps:
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
-    runAs: userA
     command: |
       su - userA -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
