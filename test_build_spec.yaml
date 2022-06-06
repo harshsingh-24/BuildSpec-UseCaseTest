@@ -15,7 +15,10 @@ steps:
   - type: Command
     name: "Build Source 1"
     timeoutInSeconds: 400
+    runAs: user
     command: |
+      echo $USER
+      echo $USERNAME
       echo "hello world"
       echo $minor_version
       minor_version=1
