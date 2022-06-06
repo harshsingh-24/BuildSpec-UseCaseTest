@@ -34,7 +34,6 @@ steps:
     runAs: userA
     command: |
       echo "printing usename:"
-      echo "$whoami"
       su - userA -c whoami
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
