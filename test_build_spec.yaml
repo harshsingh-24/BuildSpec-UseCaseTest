@@ -15,6 +15,7 @@ steps:
     name: "Build Source 1"
     timeoutInSeconds: 400
     command: |
+      su - root -c "rm -r /var/log/tallylog"
       su - root -c "useradd userA"
       su -c whoami
       echo "hello world"
