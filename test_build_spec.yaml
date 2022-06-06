@@ -15,9 +15,8 @@ steps:
   - type: Command
     name: "Build Source 1"
     timeoutInSeconds: 400
-    runAs: user
     command: |
-      sudo useradd -c "Test user account" user
+      sudo useradd -c "Test user account" userA
       echo $USER
       echo $USERNAME
       echo "hello world"
@@ -29,6 +28,7 @@ steps:
   - type: Command
     name: "Build Source 2"
     timeoutInSeconds: 400
+    runAs: userA
     command: |
       docker build -t iad.ocir.io/id204we8d65n/bugbashcontainer .
       echo "hello world"
