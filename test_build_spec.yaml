@@ -20,6 +20,8 @@ steps:
       su - userA
       echo "$whoami"
       echo "hello world"
+      su - userA -c whoami
+      echo "$whoami"
       echo $minor_version
       minor_version=1
       echo “test”> abc.txt
